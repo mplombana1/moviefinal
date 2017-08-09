@@ -1,0 +1,7 @@
+{
+  "name": "movieinfo_rails",
+  "private": true,
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}

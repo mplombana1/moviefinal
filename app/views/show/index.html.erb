@@ -2,25 +2,8 @@
   <div id="movies" class="row">
   	<%= render partial: 'query_form' %>
 
-<<<<<<< HEAD
-
   <div class="container">
-    <div class="jumbotron">
-      <h3 class="text-center">Search For Any Movie</h3>
-      <form id="searchForm">
-        <input type="text" class="form-control" id="searchText" placeholder="Search Movie">
-      </form>
-    </div>
-  </div>
-  <div class="container">
-    <div id="movies" class="row"></div>
-  </div>
-
-  
-
-  <div class="container">
-    <div id="movies" class="row"></div>
-=======
+    <div id="movies" class="row">
 	<% if @movies.any?  %> 
 		<% @movies.each do |movie| %>
 
@@ -33,5 +16,5 @@
 			</div>
 		<% end %>
 	<% end %>
->>>>>>> 7c075976e8c2307fd04eab85573e39c6c3ad2ca1
   </div>
+</div>

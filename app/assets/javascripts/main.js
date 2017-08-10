@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 $(document).ready(() => {
   $('#searchForm').on('submit', (e) => {
     let searchText = $('#searchText').val();
@@ -90,3 +91,5 @@ function getMovie(){
        console.log(err);
     });
 }
+=======
+>>>>>>> 7c075976e8c2307fd04eab85573e39c6c3ad2ca1

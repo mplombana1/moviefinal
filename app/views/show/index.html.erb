@@ -1,15 +1,8 @@
-<nav class="navbar navbar-default">
-  <div class= "container">
-    <div class= "navbar-header">
-      <a class="navbar-brand" href="index.html">MovieInfo</a>
-    </div>
-  </div>
-</nav>
 
-<div class="slider">
-<%= carousel_for(@pictures) %>
-</div>
+  <div id="movies" class="row">
+  	<%= render partial: 'query_form' %>
 
+<<<<<<< HEAD
 
   <div class="container">
     <div class="jumbotron">
@@ -27,13 +20,18 @@
 
   <div class="container">
     <div id="movies" class="row"></div>
-  </div>
-  <script
-  src="http://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="main.js"></script>
-  <script src="public/jquery-1.11.3.min.js"></script>
+=======
+	<% if @movies.any?  %> 
+		<% @movies.each do |movie| %>
 
-  <script src="public/IMG/double-tail-spin.svg"></script>
+			<div class="col-md-3">
+				<div class="well text-center">
+					<img src="<%= movie['Poster'] %>">
+					<h5><%= movie['Title'] %></h5>
+					<a class="btn btn=primary" href="movie?imdbID=<%= movie['imdbID'] %>">Movie Details</a>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+>>>>>>> 7c075976e8c2307fd04eab85573e39c6c3ad2ca1
+  </div>

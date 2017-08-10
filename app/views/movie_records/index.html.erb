@@ -1,0 +1,34 @@
+
+<p id="notice"><%= notice %></p>
+
+<h1>Movie Records</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Plot</th>
+      <th>Imdb rating</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movie_records.each do |movie_record| %>
+      <tr>
+        <td>
+          <div class="col-xs-4 col-md-4">
+            <div class="thumbnail"><img src="<%= movie_record.poster_url %>" class=/>
+          </div>
+        </td>
+        <td><%= movie_record.title %></td>
+        <td><%= movie_record.plot %></td>
+        <td><%= movie_record.imdb_rating %></td>
+        <td><%= link_to 'Destroy', movie_record_path(movie_record), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

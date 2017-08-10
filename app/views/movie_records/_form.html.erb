@@ -1,0 +1,57 @@
+<%= form_with(model: movie_record, local: true) do |form| %>
+  <% if movie_record.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(movie_record.errors.count, "error") %> prohibited this movie_record from being saved:</h2>
+
+      <ul>
+      <% movie_record.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :movie_record_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :poster_url %>
+    <%= form.text_field :poster_url, id: :movie_record_poster_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :plot %>
+    <%= form.text_field :plot, id: :movie_record_plot %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imbd_url %>
+    <%= form.text_field :imbd_url, id: :movie_record_imbd_url %>
+  </div>
+
+  <div class="field">
+    <%= form.label :wachted %>
+    <%= form.check_box :wachted, id: :movie_record_wachted %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imdb_rating %>
+    <%= form.number_field :imdb_rating, id: :movie_record_imdb_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :personal_rating %>
+    <%= form.number_field :personal_rating, id: :movie_record_personal_rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, id: :movie_record_user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @movie_record.title %>
+</p>
+
+<p>
+  <strong>Poster url:</strong>
+  <%= @movie_record.poster_url %>
+</p>
+
+<p>
+  <strong>Plot:</strong>
+  <%= @movie_record.plot %>
+</p>
+
+<p>
+  <strong>Imbd url:</strong>
+  <%= @movie_record.imbd_url %>
+</p>
+
+<p>
+  <strong>Wachted:</strong>
+  <%= @movie_record.wachted %>
+</p>
+
+<p>
+  <strong>Imdb rating:</strong>
+  <%= @movie_record.imdb_rating %>
+</p>
+
+<p>
+  <strong>Personal rating:</strong>
+  <%= @movie_record.personal_rating %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @movie_record.user %>
+</p>
+
+<%= link_to 'Edit', edit_movie_record_path(@movie_record) %> |
+<%= link_to 'Back', movie_records_path %>

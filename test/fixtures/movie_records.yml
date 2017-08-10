@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  poster_url: MyString
+  plot: MyString
+  imbd_url: MyString
+  wachted: false
+  imdb_rating: 1
+  personal_rating: 1
+  user: one
+
+two:
+  title: MyString
+  poster_url: MyString
+  plot: MyString
+  imbd_url: MyString
+  wachted: false
+  imdb_rating: 1
+  personal_rating: 1
+  user: two

@@ -1,25 +1,15 @@
 class MovieRecordsController < ApplicationController
-  before_action :set_movie_record, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, :set_movie_record, only: [:destroy]
 
   # GET /movie_records
   # GET /movie_records.json
   def index
-    @movie_records = MovieRecord.all
+    @movie_records = []
+    if user_signed_in?
+      @movie_records = MovieRecord.where(user_id: current_user.id)
+    end
   end
 
-  # GET /movie_records/1
-  # GET /movie_records/1.json
-  def show
-  end
-
-  # GET /movie_records/new
-  def new
-    @movie_record = MovieRecord.new
-  end
-
-  # GET /movie_records/1/edit
-  def edit
-  end
 
   # POST /movie_records
   # POST /movie_records.json
@@ -28,28 +18,28 @@ class MovieRecordsController < ApplicationController
 
     respond_to do |format|
       if @movie_record.save
-        format.html { redirect_to @movie_record, notice: 'Movie record was successfully created.' }
+        format.html { redirect_to movie_records_url, notice: 'Movie record was successfully created.' }
         format.json { render :show, status: :created, location: @movie_record }
       else
-        format.html { render :new }
+        format.html { redirect_to movie_records_url }
         format.json { render json: @movie_record.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /movie_records/1
-  # PATCH/PUT /movie_records/1.json
-  def update
-    respond_to do |format|
-      if @movie_record.update(movie_record_params)
-        format.html { redirect_to @movie_record, notice: 'Movie record was successfully updated.' }
-        format.json { render :show, status: :ok, location: @movie_record }
-      else
-        format.html { render :edit }
-        format.json { render json: @movie_record.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # # PATCH/PUT /movie_records/1
+  # # PATCH/PUT /movie_records/1.json
+  # def update
+  #   respond_to do |format|
+  #     if @movie_record.update(movie_record_params)
+  #       format.html { redirect_to @movie_record, notice: 'Movie record was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @movie_record }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @movie_record.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /movie_records/1
   # DELETE /movie_records/1.json
@@ -69,6 +59,6 @@ class MovieRecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def movie_record_params
-      params.require(:movie_record).permit(:title, :poster_url, :plot, :imbd_url, :imdb_rating, :user_id)
+      params.require(:movie_record).permit(:title, :poster_url, :plot, :imbd_id, :imdb_rating, :user_id)
     end
 end

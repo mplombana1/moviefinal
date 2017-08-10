@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170810003427) do
     t.string "title"
     t.string "poster_url"
     t.string "plot"
-    t.string "imbd_url"
+    t.string "imbd_id"
     t.boolean "watched"
     t.string "imdb_rating"
     t.integer "personal_rating"

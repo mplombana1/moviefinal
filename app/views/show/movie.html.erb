@@ -21,16 +21,20 @@
     <%= @movie['Plot'] %>
     <hr>
     <%= form_tag movie_records_path do %>
+    <a href="http://imdb.com/title/<%= @movie['imdbID'] %>" target="_blank" class="btn btn-default">View iMDB</a>
+      <a href="index.html" class="btn btn-default">Go Back To Search</a>
+
+      <% if user_signed_in? %>
       <%= hidden_field_tag "movie_record[title]", @movie['Title'] %>
       <%= hidden_field_tag "movie_record[poster_url]", @movie['Poster'] %>
       <%= hidden_field_tag "movie_record[plot]", @movie['Plot'] %>
-      <%= hidden_field_tag "movie_record[imbd_url]", "http://imdb.com/title/#{@movie['imdbID']}" %>
+      <%= hidden_field_tag "movie_record[imbd_id]", @movie['imdbID'] %>
       <%= hidden_field_tag "movie_record[imdb_rating]", @movie['imdbRating'] %>
       <%= hidden_field_tag "movie_record[user_id]", current_user.id %>
 
-      <a href="http://imdb.com/title/<%= @movie['imdbID'] %>" target="_blank" class="btn btn-default">View iMDB</a>
-      <a href="index.html" class="btn btn-default">Go Back To Search</a>
+      
       <%= submit_tag 'Watch Later', class: "btn btn-primary" %>
+      <% end %>
     <% end %>
   </div>
 </div>

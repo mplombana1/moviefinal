@@ -5,7 +5,7 @@ class CreateMovieRecords < ActiveRecord::Migration[5.1]
       t.string :poster_url
       t.string :plot
       t.string :imbd_url
-      t.boolean :wachted
+      t.boolean :watched
       t.integer :imdb_rating
       t.integer :personal_rating
       t.belongs_to :user, foreign_key: true

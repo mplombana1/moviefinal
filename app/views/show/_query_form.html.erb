@@ -1,0 +1,15 @@
+<div class="slider">
+<%= carousel_for(@pictures) %>
+</div>
+
+<div class="container">
+  <div class="jumbotron">
+    <h3 class="text-center">Search For Any Movie</h3>
+    <!-- <form id="searchForm">
+      <input type="text" class="form-control" id="searchText" placeholder="Search Movie">
+    </form> -->
+    <%= form_tag search_path do %>
+    	<%= text_field_tag :query, "", :class => 'form-control' %>
+    <% end %>
+  </div>
+</div>

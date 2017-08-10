@@ -1,19 +1,19 @@
 
-
-
-<div class="slider">
-<%= carousel_for(@pictures) %>
-</div>
-
 <div class="container">
-  <div class="jumbotron">
-    <h3 class="text-center">Search For Any Movie</h3>
-    <form id="searchForm">
-      <input type="text" class="form-control" id="searchText" placeholder="Search Movie">
-    </form>
+  <div id="movies" class="row">
+  	<%= render partial: 'query_form' %>
+
+	<% if @movies.any?  %> 
+		<% @movies.each do |movie| %>
+
+			<div class="col-md-3">
+				<div class="well text-center">
+					<img src="<%= movie['Poster'] %>">
+					<h5><%= movie['Title'] %></h5>
+					<a class="btn btn=primary" href="movie?imdbID=<%= movie['imdbID'] %>">Movie Details</a>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
   </div>
-</div>
-
-<div class="container">
-  <div id="movies" class="row"></div>
 </div>

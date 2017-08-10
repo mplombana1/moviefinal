@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20170810003427) do
     t.string "plot"
     t.string "imbd_url"
     t.boolean "watched"
-    t.integer "imdb_rating"
+    t.string "imdb_rating"
     t.integer "personal_rating"
     t.integer "user_id"
     t.datetime "created_at", null: false

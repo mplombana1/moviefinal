@@ -1,6 +1,10 @@
 * {
   font-family: 'Roboto', sans-serif;
 
+
+}
+a {
+  color: white;
 }
 
 #movies img, #movie img {
@@ -77,4 +81,8 @@ body > div > a:nth-child(5){
 }
 #new_user > div.actions > input[type="submit"] {
   color: black;
+}
+
+#movies > div:nth-child(1) > div > a {
+  color: white;
 }

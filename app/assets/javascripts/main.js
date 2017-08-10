@@ -25,6 +25,7 @@ function getMovies(searchText){
         `;
       });
 
+    
       $('#movies').html(output);
 
     })

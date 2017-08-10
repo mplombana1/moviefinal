@@ -35,6 +35,46 @@ padding-bottom: 20px;
 height:
 max-height auto;
 
+}
+
+body > nav > div > div.collapse.navbar-collapse > p > a {
+  color: white;
+}
+
+                /*login page*/
+
+body > nav > div > div.collapse.navbar-collapse > ul > li:nth-child(2) > a {
+  color: #fff
+}
+
+body > div {
+display: block;
+text-align: center;
+}
+
+#new_user > div.actions > input[type="submit"] {
+  margin-bottom: 20px;
+}
+
+#new_user > div:nth-child(5) > label {
+  padding: 0;
+  margin: 0;
+}
+
+#user_remember_me {
+display: flex;
+align-items: flex-end;
+margin: 0 auto;
+}
+body > div > a:nth-child(3) {
+  color: white;
+}
 
 
+
+body > div > a:nth-child(5){
+  color: white;
+}
+#new_user > div.actions > input[type="submit"] {
+  color: black;
 }
